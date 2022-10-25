@@ -440,6 +440,23 @@ Ext.define('WEB_BASE.store.NavigationTree', {
                     },
                 ],
             },
+            {
+                text: 'System',
+                iconCls: 'x-fa fa-user-circle',
+                viewType: 'System_View',
+                routeId: 'system',
+                index: 0,
+                children: [
+                    {
+                        text: 'Certificate Manager',
+                        iconCls: 'x-fa fa-user-circle',
+                        viewType: 'Cert_Manager_View',
+                        routeId: 'cert_manager',
+                        leaf: true,
+                        index: 1,
+                    }
+                ]
+            },
         ],
     },
 });

@@ -162,7 +162,9 @@ Ext.define('WEB_BASE.view.Validator.Validator_View', {
                             ]
                         }
                     ]
-                }
+                },
+                ' ',
+                             
             ]
         }
     ]

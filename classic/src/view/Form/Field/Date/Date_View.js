@@ -11,8 +11,17 @@ Ext.define('WEB_BASE.view.Form.Field.Date.Date_View', {
     layout: 'vbox',
     items: [
         {
+            xtype: 'fieldset',
+            items: [
+                {
             xtype: 'datefield',
-            fieldLabel: 'Date'
+            fieldLabel: 'Date',
+                }
+            ]
+        },
+        {
+            xtype: 'fieldset',
+            title: ''
         }
     ]
 });

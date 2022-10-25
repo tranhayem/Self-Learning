@@ -1,4 +1,3 @@
-
 Ext.define("WEB_BASE.override.ptype_number", {
     override: "Ext.form.field.VTypes",
     /**
@@ -19,9 +18,6 @@ Ext.define("WEB_BASE.override.ptype_number", {
                 }
                 return s;
             }
-
-
-
             return samount;
         }
         //var bd = Ext.getCmp('fldAllocationAmount');
