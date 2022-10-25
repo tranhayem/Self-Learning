@@ -104,8 +104,8 @@ Ext.define('WEB_BASE.store.NavigationTree', {
             {
                 text: 'Form',
                 iconCls: 'x-fa fa-file',
-                viewType: 'Form_View1',
-                routeId: 'form',
+                viewType: 'Form1_View',
+                routeId: 'form_base',
                 index: 2,
                 children: [
                     {
@@ -457,6 +457,14 @@ Ext.define('WEB_BASE.store.NavigationTree', {
                     }
                 ]
             },
+            {
+                text: 'Add',
+                iconCls: 'x-fa fa-user-circle',
+                viewType: 'Add_View',
+                routeId: 'add',
+                leaf: true,
+                index: 1,
+            }
         ],
     },
 });

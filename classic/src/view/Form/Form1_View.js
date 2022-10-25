@@ -1,7 +1,7 @@
 Ext.define('WEB_BASE.view.Form.Form1_View', {
     extend: 'Ext.tree.Panel',
-    xtype: 'Form1_View1',
-    id: 'Form1_View1',
+    xtype: 'Form1_View',
+    id: 'Form1_View',
 
     controller: 'Form1_ViewController',
     viewModel: {

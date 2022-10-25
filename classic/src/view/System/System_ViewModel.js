@@ -1,4 +1,4 @@
-Ext.define('WEB_BASE.view.Form.Form_ViewModel', {
+Ext.define('WEB_BASE.view.System.System_ViewModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.Form_ViewModel'
+    alias: 'viewmodel.System_ViewModel'
 })
