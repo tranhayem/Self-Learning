@@ -87,7 +87,7 @@ Ext.define('WEB_BASE.view.System.Cert_Manager.CAs.Add_View', {
                     items: [
                         {
                             xtype: 'combobox',
-                            fieldLabel: 'key length (bits)',
+                            fieldLabel: 'Key length (bits)',
                             width: '100%',
                             emptyText: ''
                         },
@@ -153,10 +153,9 @@ Ext.define('WEB_BASE.view.System.Cert_Manager.CAs.Add_View', {
                     iconCls: 'x-fa fa-Save'
                 },
                 {
-                    width: '70%',
-                    flex: 1,
+                    width: '60%',
                     border: false,
-                    hidden: true
+                    style: 'background-color: #cfcfcf'
                 },
             ]
         }

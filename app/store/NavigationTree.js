@@ -279,14 +279,14 @@ Ext.define('WEB_BASE.store.NavigationTree', {
                     }
                 ]
             },
-            // {
-            //     text: 'Tài khoản',
-            //     iconCls: 'x-fa fa-user-circle',
-            //     viewType: 'Account_View',
-            //     routeId: 'account',
-            //     leaf: true,
-            //     index: 1,
-            // },
+            {
+                text: 'Tài khoản',
+                iconCls: 'x-fa fa-user-circle',
+                viewType: 'Account_View',
+                routeId: 'account',
+                leaf: true,
+                index: 1,
+            },
             {
                 text: 'Validator',
                 iconCls: 'x-fa fa-user-circle',
