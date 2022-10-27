@@ -15,7 +15,8 @@ Ext.define('WEB_BASE.view.System.Cert_Manager.Cert_Manager_View', {
             xtype: 'CAs_View'
         },
         {
-            title: 'Certificates'
+            title: 'Certificates',
+            xtype: 'Certificates_View'
         },
         {
             title: 'Certificate Revocation'
