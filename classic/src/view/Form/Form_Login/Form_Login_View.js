@@ -12,33 +12,56 @@ Ext.define('WEB_BASE.view.Form.Form_Login.Form_Login_View', {
     items: [
         {
             xtype: 'form',
+            title: 'Form Đăng Nhập',
             border: true,
             layout: 'auto',
-            title: 'Form Đăng Nhập',
             bodyPadding: 10,
-            defaults: {
-                allowBlank: false,
-                msgTarget: 'under'
-            },
+            width: 350,
             items: [
                 {
                     xtype: 'textfield',
                     fieldLabel: 'Tên Đăng Nhập:',
                     emptyText: 'Nhập tài khoản',
                     blankText: 'Chưa nhập tài khoản',
+                    allowBlank: false,
+                    msgTarget: 'under',
+                    width: '100%',
                     bind: {
                         value: '{username}'
                     }
                 },
                 {
-                    xtype: 'textfield',
-                    fieldLabel: 'Mật Khẩu:',
-                    emptyText: 'Nhập mật khẩu',
-                    inputType: 'password',
-                    blankText: 'Chưa nhập mật khẩu',
-                    bind: {
-                        value: '{password}'
-                    }
+                    xtype: 'container',
+                    layout: 'hbox',
+                    width: '100%',
+                    items: [
+                        {
+                            xtype: 'textfield',
+                            fieldLabel: 'Mật Khẩu:',
+                            emptyText: 'Nhập mật khẩu',
+                            inputType: 'password',
+                            blankText: 'Chưa nhập mật khẩu',
+                            allowBlank: false,
+                            msgTarget: 'under',
+                            flex: 1,
+                            bind: {
+                                value: '{password}'
+                            }
+                        },
+                        {
+                            xtype: 'button',
+                            style: '',
+                            pain: true,
+                            iconCls: 'fa fa-eye',
+                            handler: function (button) {
+                                var ShowPass = this.iconCls === 'fa fa-eye';
+                                this.setIconCls(ShowPass ? 'fa fa-eye-slash' : 'fa fa-eye');
+                                this.prev().getEl().query('input', false)[0].set({
+                                    'type': ShowPass ? 'text' : 'password'
+                                })
+                            },
+                        }
+                    ]
                 },
                 {
                     xtype: 'checkboxfield',

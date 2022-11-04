@@ -75,7 +75,7 @@ Ext.define('WEB_BASE.store.NavigationTree', {
                 viewType: 'Hsm_Config_View',
                 routeId: 'dashboard', // routeId defaults to viewType
                 leaf: true,
-                index: 6,
+                index: 9,
             },
             {
                 text: 'Bank API',
@@ -83,7 +83,7 @@ Ext.define('WEB_BASE.store.NavigationTree', {
                 viewType: 'Bank_API_View',
                 routeId: 'bank_api', // routeId defaults to viewType
                 leaf: true,
-                index: 5,
+                index: 8,
             },
             {
                 text: 'Authen Client',
@@ -91,7 +91,7 @@ Ext.define('WEB_BASE.store.NavigationTree', {
                 viewType: 'Authen_Client_View',
                 routeId: 'authen_client', // routeId defaults to viewType
                 leaf: true,
-                index: 4,
+                index: 7,
             },
             {
                 text: 'TXN Record',
@@ -99,7 +99,7 @@ Ext.define('WEB_BASE.store.NavigationTree', {
                 viewType: 'TXN_Record_View',
                 routeId: 'txn_record', // routeId defaults to viewType
                 leaf: true,
-                index: 3,
+                index: 6,
             },
             {
                 text: 'Form',
@@ -285,7 +285,7 @@ Ext.define('WEB_BASE.store.NavigationTree', {
                 viewType: 'Account_View',
                 routeId: 'account',
                 leaf: true,
-                index: 1,
+                index: 5,
             },
             {
                 text: 'Validator',
@@ -293,14 +293,14 @@ Ext.define('WEB_BASE.store.NavigationTree', {
                 viewType: 'Validator_View',
                 routeId: 'validator',
                 leaf: true,
-                index: 1,
+                index: 4,
             },
             {
                 text: 'Layout',
                 iconCls: 'x-fa fa-pen',
                 viewType: 'Layout_View',
                 routeId: 'layout',
-                index: 0,
+                index: 3,
                 children: [
                     {
                         text: 'Absolute ',
@@ -445,7 +445,7 @@ Ext.define('WEB_BASE.store.NavigationTree', {
                 iconCls: 'x-fa fa-user-circle',
                 viewType: 'System_View',
                 routeId: 'system',
-                index: 0,
+                index: 2,
                 children: [
                     {
                         text: 'Certificate Manager',
@@ -464,7 +464,15 @@ Ext.define('WEB_BASE.store.NavigationTree', {
                 routeId: 'add',
                 leaf: true,
                 index: 1,
-            }
+            },
+            {
+                text: 'Project',
+                iconCls: 'x-fa fa-user-circle',
+                viewType: 'Project_View',
+                routeId: 'project',
+                index: 0,
+                leaf: true
+            },
         ],
     },
 });
