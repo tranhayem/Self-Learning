@@ -376,5 +376,5 @@ Ext.define('WEB_BASE.view.main.MainController', {
         }
 
         return fn;
-    },
+    }
 });

@@ -3,10 +3,6 @@ Ext.define('WEB_BASE.view.Account.Account_View', {
     xtype: 'Account_View',
     id: 'Account_View',
 
-    requires: [
-        'WEB_BASE.store.Account_Store'
-    ],
-
     controller: 'Account_ViewController',
     viewModel: {
         type: 'Account_ViewModel'
@@ -21,24 +17,155 @@ Ext.define('WEB_BASE.view.Account.Account_View', {
                 borderBottomWidth: '10px',
                 borderBottomStyle: 'solid'
             },
-            columnLines: true,
-            columns: [
-                { text: 'STT', xtype: 'rownumberer', width: '5%', align: 'center' },
-                { text: 'Tên', dataIndex: 'lastname', flex: 1, align: 'center' }, //xtype: 'templatecolumn', tpl: '{firstname} {lastname}'
-                { text: 'Ngày sinh', xtype: 'datecolumn', format: 'l, d/m/Y', dataIndex: 'dob', flex: 1, align: 'center' },
-                { text: 'Số điện thoại', xtype: 'numbercolumn', format: '', dataIndex: 'phone', flex: 1, align: 'center' },
+            tbar: [
                 {
-                    text: 'Test',
-                    xtype: 'widgetcolumn',
-                    dataIndex: 'progress',
-                    widget: {
-                        xtype: 'progressbarwidget',
-                        textTpl: '{value:percent}'
-                    }
+                    xtype: 'button',
+                    text: 'Add',
+                    itemId: 'add',
+                    iconCls: 'x-fa fa-plus',
+                    handler: 'Add_Acc'
+                },
+                {
+                    xtype: 'button',
+                    text: 'Edit',
+                    itemId: 'edit',
+                    iconCls: 'x-fa fa-edit',
+                    disabled: true,
+                    reference: 'btnedit',
+                    handler: 'Edit_Acc'
+                },
+                {
+                    xtype: 'button',
+                    text: 'Delete',
+                    itemId: 'delete',
+                    iconCls: 'x-fa fa-trash',
+                    disabled: true,
+                    reference: 'btndelete',
+                    handler: 'Delete_Acc'
                 }
             ],
+            columnLines: true,
+            columns: [
+                // { text: 'STT', xtype: 'rownumberer', width: '5%', align: 'center' },
+                // { text: 'Tên', dataIndex: 'lastname', flex: 1, align: 'center' }, //xtype: 'templatecolumn', tpl: '{firstname} {lastname}'
+                // { text: 'Ngày sinh', xtype: 'datecolumn', format: 'l, d/m/Y', dataIndex: 'dob', flex: 1, align: 'center' },
+                // { text: 'Số điện thoại', xtype: 'numbercolumn', format: '', dataIndex: 'phone', flex: 1, align: 'center' },
+                // {
+                //     text: 'Test',
+                //     xtype: 'widgetcolumn',
+                //     dataIndex: 'progress',
+                //     widget: {
+                //         xtype: 'progressbarwidget',
+                //         textTpl: '{value:percent}'
+                //     }
+                // }
+                {
+                    text: 'STT',
+                    xtype: 'rownumberer',
+                    width: 50,
+                    align: 'center'
+                },
+                {
+                    text: 'postId',
+                    dataIndex: 'postId',
+                    flex: 1,
+                    align: 'center',
+                    items: {
+                        xtype: 'textfield',
+                        reference: 'postIdFilter',
+                        width: '100%',
+                        // margin: 2,
+                        enableKeyEvents: true,
+                        listeners: {
+                            keyup: 'postIdFilterKeyup',
+                            buffer: 500
+                        }
+                    }
+                },
+                {
+                    text: 'id',
+                    dataIndex: 'id',
+                    flex: 1,
+                    align: 'center',
+                    items: {
+                        xtype: 'textfield',
+                        reference: 'postIdFilter',
+                        width: '100%',
+                        // margin: 2,
+                        enableKeyEvents: true,
+                        listeners: {
+                            keyup: 'postIdFilterKeyup',
+                            buffer: 500
+                        }
+                    }
+                },
+                {
+                    text: 'name',
+                    dataIndex: 'name',
+                    flex: 1,
+                    align: 'center',
+                    items: {
+                        xtype: 'textfield',
+                        reference: 'postIdFilter',
+                        width: '100%',
+                        // margin: 2,
+                        enableKeyEvents: true,
+                        listeners: {
+                            keyup: 'postIdFilterKeyup',
+                            buffer: 500
+                        }
+                    }
+                },
+                {
+                    text: 'email',
+                    dataIndex: 'email',
+                    flex: 1,
+                    align: 'center',
+                    items: {
+                        xtype: 'textfield',
+                        reference: 'postIdFilter',
+                        width: '100%',
+                        // margin: 2,
+                        enableKeyEvents: true,
+                        listeners: {
+                            keyup: 'postIdFilterKeyup',
+                            buffer: 500
+                        }
+                    }
+                },
+                {
+                    text: 'body',
+                    dataIndex: 'body',
+                    flex: 1,
+                    align: 'center',
+                    items: {
+                        xtype: 'textfield',
+                        reference: 'postIdFilter',
+                        width: '100%',
+                        // margin: 2,
+                        enableKeyEvents: true,
+                        listeners: {
+                            keyup: 'postIdFilterKeyup',
+                            buffer: 500
+                        }
+                    }
+                }
+                // { text: 'postId', dataIndex: 'postId', align: 'center'},
+                // { text: 'Id', dataIndex: 'id', align: 'center'},
+                // { text: 'Name', dataIndex: 'name', flex: 1},
+                // { text: 'Email', dataIndex: 'email', flex: 1},
+                // { text: 'Body', dataIndex: 'body', flex: 1},
+            ],
+            renderTo: Ext.getBody(),
+            selModel: {
+                type: 'checkboxmodel',
+                mode: 'SINGLE', // chỉ được tích 1 hàng
+                listeners: {
+                    select: 'onChecked'
+                }
+            },
             bind: {
-                store: '{Account_Store}',
+                store: '{DemoApi_Store}',
                 selection: '{theacc}'
             },
             bbar: {
@@ -49,28 +176,28 @@ Ext.define('WEB_BASE.view.Account.Account_View', {
         {
             xtype: 'container',
             layout: 'vbox',
+            height: 230,
+            scrollable: true,
             flex: 1,
+            defaults: {
+                xtype: 'textfield',
+                width: '100%'
+            },
             items: [
                 {
-                    xtype: 'textfield',
                     fieldLabel: 'Tài khoản:',
-                    width: '100%',
                     bind: {
                         value: '{theacc.username}'
                     }
                 },
                 {
-                    xtype: 'textfield',
                     fieldLabel: 'Mật khẩu:',
-                    width: '100%',
                     bind: {
                         value: '{theacc.password}'
                     }
                 },
                 {
-                    xtype: 'textfield',
                     fieldLabel: 'Họ và tên:',
-                    width: '100%',
                     bind: {
                         value: '{theacc.firstname} {theacc.lastname}'
                     }
@@ -79,40 +206,28 @@ Ext.define('WEB_BASE.view.Account.Account_View', {
                     xtype: 'datefield',
                     fieldLabel: 'Ngày sinh:',
                     format: 'l, d/m/Y',
-                    width: '100%',
                     bind: {
                         value: '{theacc.dob}'
                     }
                 },
                 {
-                    xtype: 'textfield',
                     fieldLabel: 'Email:',
-                    width: '100%',
                     bind: {
                         value: '{theacc.email}'
                     }
                 },
                 {
-                    xtype: 'textfield',
                     fieldLabel: 'Địa chỉ:',
-                    width: '100%',
                     bind: {
                         value: '{theacc.address}'
                     }
                 },
                 {
-                    xtype: 'textfield',
                     fieldLabel: 'Số điện thoại:',
-                    width: '100%',
                     bind: {
                         value: '{theacc.phone}'
                     }
                 },
-                {
-                    xtype: 'button',
-                    text: 'Save',
-                    formBind: true
-                }
             ]
         }
     ]

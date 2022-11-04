@@ -7,10 +7,10 @@ Ext.define('WEB_BASE.store.Account_Store', {
         // 'username', 'password', 'name', 'dob', 'email', 'address', 'phone',
         { name: 'username', type: ''},
         { name: 'password', type: ''},
-        { name: 'name', type: ''},
-        { name: 'dob', type: ''},
+        { name: 'name', type: 'string'},
+        { name: 'dob', type: 'date'},
         { name: 'email', type: ''},
-        { name: 'address', type: ''},
+        { name: 'address', type: 'string'},
         { name: 'phone', type: 'number'},
         { name: 'progress'}
     ],
