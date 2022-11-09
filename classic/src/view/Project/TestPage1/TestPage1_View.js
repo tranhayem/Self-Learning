@@ -1,4 +1,4 @@
-Ext.define('WEB_BASE.Project.TestPage1.TestPage1_View', {
+Ext.define('WEB_BASE.view.Project.TestPage1.TestPage1_View', {
     extend: 'Ext.panel.Panel',
     xtype: 'TestPage1_View',
     id: 'TestPage1_View',
@@ -27,7 +27,6 @@ Ext.define('WEB_BASE.Project.TestPage1.TestPage1_View', {
                     items: [
                         {
                             xtype: '',
-                            title: 'phần bên trái',
                             flex: 1,
                             layout: 'vbox',
                             scrollable: true,
@@ -89,7 +88,6 @@ Ext.define('WEB_BASE.Project.TestPage1.TestPage1_View', {
                         },
                         {
                             xtype: '',
-                            title: 'phần bên phải',
                             width: '50%',
                             layout: 'vbox',
                             scrollable: true,
@@ -170,9 +168,8 @@ Ext.define('WEB_BASE.Project.TestPage1.TestPage1_View', {
                                     align: 'center'
                                 },
                                 {
-                                    text: 'postId',
+                                    text: 'Post Id',
                                     dataIndex: 'postId',
-                                    flex: 1,
                                     align: 'center',
                                     items: {
                                         xtype: 'textfield',
@@ -182,87 +179,80 @@ Ext.define('WEB_BASE.Project.TestPage1.TestPage1_View', {
                                         enableKeyEvents: true,
                                         listeners: {
                                             keyup: 'postIdFilterKeyup',
-                                            buffer: 500
+                                            // buffer: 500
                                         }
                                     }
                                 },
                                 {
-                                    text: 'id',
+                                    text: 'Id',
                                     dataIndex: 'id',
-                                    flex: 1,
                                     align: 'center',
                                     items: {
                                         xtype: 'textfield',
-                                        reference: 'postIdFilter',
+                                        reference: 'idFilter',
                                         width: '100%',
-                                        // margin: 2,
                                         enableKeyEvents: true,
                                         listeners: {
-                                            keyup: 'postIdFilterKeyup',
-                                            buffer: 500
+                                            keyup: 'idFilterKeyup',
                                         }
                                     }
                                 },
                                 {
-                                    text: 'name',
+                                    text: 'Name',
                                     dataIndex: 'name',
                                     flex: 1,
-                                    align: 'center',
                                     items: {
                                         xtype: 'textfield',
-                                        reference: 'postIdFilter',
+                                        reference: 'nameFilter',
                                         width: '100%',
-                                        // margin: 2,
                                         enableKeyEvents: true,
                                         listeners: {
-                                            keyup: 'postIdFilterKeyup',
-                                            buffer: 500
+                                            keyup: 'nameFilterKeyup',
                                         }
+                                    },
+                                    renderer: function (value) {
+                                        return '<span style="color:#00f; text-decoration: underline">' + value + '</span>';
+                                    },
+                                    listeners: {
+                                        click: 'abcxyz'
                                     }
                                 },
                                 {
-                                    text: 'email',
+                                    text: 'Email',
                                     dataIndex: 'email',
                                     flex: 1,
-                                    align: 'center',
                                     items: {
                                         xtype: 'textfield',
-                                        reference: 'postIdFilter',
+                                        reference: 'emailFilter',
                                         width: '100%',
-                                        // margin: 2,
                                         enableKeyEvents: true,
                                         listeners: {
-                                            keyup: 'postIdFilterKeyup',
-                                            buffer: 500
+                                            keyup: 'emailFilterKeyup',
                                         }
                                     }
                                 },
                                 {
-                                    text: 'body',
+                                    text: 'Body',
                                     dataIndex: 'body',
                                     flex: 1,
-                                    align: 'center',
                                     items: {
                                         xtype: 'textfield',
-                                        reference: 'postIdFilter',
+                                        reference: 'bodyFilter',
                                         width: '100%',
-                                        // margin: 2,
                                         enableKeyEvents: true,
                                         listeners: {
-                                            keyup: 'postIdFilterKeyup',
-                                            buffer: 500
+                                            keyup: 'bodyFilterKeyup',
                                         }
                                     }
                                 }
                             ],
                             bind: {
                                 store: '{DemoApi_Store}',
-                                selection: '{theacc}'
                             },
                             bbar: {
                                 xtype: 'pagingtoolbar',
                                 displayInfo: true,
-                            },
+                            }
                         },
                         {
                             xtype: '',

@@ -1,7 +1,7 @@
-Ext.define('WEB_BASE.view.Project.TestPage1.TestPage1_ViewModel', {
+Ext.define('WEB_BASE.view.Project.Demo.Demo_ViewModel',{
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.TestPage1_ViewModel',
-
+    alias: 'viewmodel.Demo_ViewModel',
+    
     requires: [
         'WEB_BASE.store.Account_Store',
         'WEB_BASR.store.DemoApi_Store'

@@ -20,7 +20,7 @@ Ext.define('WEB_BASE.view.System.Cert_Manager.Certificates.Certificates_View', {
             text: 'Add/Sign',
             iconCls: 'x-fa fa-plus',
             listeners: {
-                click: 'Add'
+                click: 'Add_a'
             }
         }
     ]

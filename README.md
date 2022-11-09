@@ -30,7 +30,7 @@ The following files are all needed to build and load the application.
    script. This file is a place where you can hook into these processes and tune
    them. See the comments in that file for more information.
  - `".sencha"` - This (typically hidden) folder contains the generated build scripts
-   and configuration files for the application. This folder is required in order to
+   and configuration files for the application. This folder is  in order to
    build the application but its content should not need to be edited in most cases.
    The content of this folder is updated by "sencha app upgrade".
 
@@ -56,7 +56,7 @@ resources, etc. that are shared by both Classic and Modern build profiles.
         store/          # Data stores
         controller/     # Global / application-level controllers
 
-    overrides/          # JavaScript code that is automatically required
+    overrides/          # JavaScript code that is automatically 
 
     sass/
         etc/            # Misc Sass code (all.scss is imported by default)
@@ -77,7 +77,7 @@ toolkit-specific:
             store/          # Data stores
             controller/     # Global / application-level controllers
 
-        overrides/          # JavaScript code that is automatically required
+        overrides/          # JavaScript code that is automatically 
 
         sass/
             etc/            # Misc Sass code (all.scss is imported by default)
@@ -93,7 +93,7 @@ toolkit-specific:
             store/          # Data stores
             controller/     # Global / application-level controllers
 
-        overrides/          # JavaScript code that is automatically required
+        overrides/          # JavaScript code that is automatically 
 
         sass/
             etc/            # Misc Sass code (all.scss is imported by default)
@@ -104,7 +104,7 @@ toolkit-specific:
 
 ## Overrides
 
-The contents of "overrides" folders are automatically required and included in
+The contents of "overrides" folders are automatically  and included in
 builds. These should not be explicitly mentioned in "requires" or "uses" in code.
 This area is intended for overrides like these:
 
@@ -113,6 +113,6 @@ This area is intended for overrides like these:
         ...
     });
 
-Such overrides, while automatically required, will only be included if their target
-class ("Ext.foo.Bar" in this case) is also required. This simplifies applying
+Such overrides, while automatically , will only be included if their target
+class ("Ext.foo.Bar" in this case) is also . This simplifies applying
 patches or extensions to other classes.

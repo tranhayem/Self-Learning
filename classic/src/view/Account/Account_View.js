@@ -66,7 +66,7 @@ Ext.define('WEB_BASE.view.Account.Account_View', {
                     align: 'center'
                 },
                 {
-                    text: 'postId',
+                    text: 'Post Id',
                     dataIndex: 'postId',
                     flex: 1,
                     align: 'center',
@@ -78,75 +78,71 @@ Ext.define('WEB_BASE.view.Account.Account_View', {
                         enableKeyEvents: true,
                         listeners: {
                             keyup: 'postIdFilterKeyup',
-                            buffer: 500
+                            // buffer: 500
                         }
                     }
                 },
                 {
-                    text: 'id',
+                    text: 'Id',
                     dataIndex: 'id',
                     flex: 1,
                     align: 'center',
                     items: {
                         xtype: 'textfield',
-                        reference: 'postIdFilter',
+                        reference: 'idFilter',
                         width: '100%',
                         // margin: 2,
                         enableKeyEvents: true,
                         listeners: {
-                            keyup: 'postIdFilterKeyup',
-                            buffer: 500
+                            keyup: 'idFilterKeyup',
                         }
                     }
                 },
                 {
-                    text: 'name',
+                    text: 'Name',
                     dataIndex: 'name',
                     flex: 1,
                     align: 'center',
                     items: {
                         xtype: 'textfield',
-                        reference: 'postIdFilter',
+                        reference: 'nameFilter',
                         width: '100%',
                         // margin: 2,
                         enableKeyEvents: true,
                         listeners: {
-                            keyup: 'postIdFilterKeyup',
-                            buffer: 500
+                            keyup: 'nameFilterKeyup',
                         }
                     }
                 },
                 {
-                    text: 'email',
+                    text: 'Email',
                     dataIndex: 'email',
                     flex: 1,
                     align: 'center',
                     items: {
                         xtype: 'textfield',
-                        reference: 'postIdFilter',
+                        reference: 'emailFilter',
                         width: '100%',
                         // margin: 2,
                         enableKeyEvents: true,
                         listeners: {
-                            keyup: 'postIdFilterKeyup',
-                            buffer: 500
+                            keyup: 'emailFilterKeyup',
                         }
                     }
                 },
                 {
-                    text: 'body',
+                    text: 'Body',
                     dataIndex: 'body',
                     flex: 1,
                     align: 'center',
                     items: {
                         xtype: 'textfield',
-                        reference: 'postIdFilter',
+                        reference: 'bodyFilter',
                         width: '100%',
                         // margin: 2,
                         enableKeyEvents: true,
                         listeners: {
-                            keyup: 'postIdFilterKeyup',
-                            buffer: 500
+                            keyup: 'bodyFilterKeyup',
                         }
                     }
                 }
@@ -171,7 +167,7 @@ Ext.define('WEB_BASE.view.Account.Account_View', {
             bbar: {
                 xtype: 'pagingtoolbar',
                 displayInfo: true,
-            },
+            }
         },
         {
             xtype: 'container',

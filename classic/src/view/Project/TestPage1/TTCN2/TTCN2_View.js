@@ -19,103 +19,50 @@ Ext.define('WEB_BASE.Project.TestPage2.TTCN2.TTCN2_View', {
                 {
                     text: 'STT',
                     xtype: 'rownumberer',
-                    width: 50,
+                    width: '5%',
                     align: 'center'
                 },
                 {
-                    text: 'postId',
-                    dataIndex: 'postId',
+                    text: 'Tên',
+                    dataIndex: 'lastname',
                     flex: 1,
-                    align: 'center',
-                    items: {
-                        xtype: 'textfield',
-                        reference: 'postIdFilter',
-                        width: '100%',
-                        // margin: 2,
-                        enableKeyEvents: true,
-                        listeners: {
-                            keyup: 'postIdFilterKeyup',
-                            buffer: 500
-                        }
-                    }
+                    align: 'center'
+                },
+                //xtype: 'templatecolumn', tpl: '{firstname} {lastname}'
+                {
+                    text: 'Ngày sinh',
+                    xtype: 'datecolumn',
+                    format: 'l, d/m/Y',
+                    dataIndex: 'dob',
+                    flex: 1,
+                    align: 'center'
                 },
                 {
-                    text: 'id',
-                    dataIndex: 'id',
+                    text: 'Số điện thoại',
+                    xtype: 'numbercolumn',
+                    format: '',
+                    dataIndex: 'phone',
                     flex: 1,
-                    align: 'center',
-                    items: {
-                        xtype: 'textfield',
-                        reference: 'postIdFilter',
-                        width: '100%',
-                        // margin: 2,
-                        enableKeyEvents: true,
-                        listeners: {
-                            keyup: 'postIdFilterKeyup',
-                            buffer: 500
-                        }
-                    }
+                    align: 'center'
                 },
                 {
-                    text: 'name',
-                    dataIndex: 'name',
-                    flex: 1,
-                    align: 'center',
-                    items: {
-                        xtype: 'textfield',
-                        reference: 'postIdFilter',
-                        width: '100%',
-                        // margin: 2,
-                        enableKeyEvents: true,
-                        listeners: {
-                            keyup: 'postIdFilterKeyup',
-                            buffer: 500
-                        }
-                    }
-                },
-                {
-                    text: 'email',
-                    dataIndex: 'email',
-                    flex: 1,
-                    align: 'center',
-                    items: {
-                        xtype: 'textfield',
-                        reference: 'postIdFilter',
-                        width: '100%',
-                        // margin: 2,
-                        enableKeyEvents: true,
-                        listeners: {
-                            keyup: 'postIdFilterKeyup',
-                            buffer: 500
-                        }
-                    }
-                },
-                {
-                    text: 'body',
-                    dataIndex: 'body',
-                    flex: 1,
-                    align: 'center',
-                    items: {
-                        xtype: 'textfield',
-                        reference: 'postIdFilter',
-                        width: '100%',
-                        // margin: 2,
-                        enableKeyEvents: true,
-                        listeners: {
-                            keyup: 'postIdFilterKeyup',
-                            buffer: 500
-                        }
+                    text: 'Test',
+                    xtype: 'widgetcolumn',
+                    dataIndex: 'progress',
+                    widget: {
+                        xtype: 'progressbarwidget',
+                        textTpl: '{value:percent}'
                     }
                 }
             ],
             bind: {
-                store: '{DemoApi_Store}',
+                store: '{Account_Store}',
                 selection: '{theacc}'
             },
             bbar: {
                 xtype: 'pagingtoolbar',
                 displayInfo: true,
-            },
+            }
         },
         {
             xtype: '',
@@ -128,21 +75,37 @@ Ext.define('WEB_BASE.Project.TestPage2.TTCN2.TTCN2_View', {
             },
             items: [
                 {
-                    fieldLabel: 'Post ID:',
+                    fieldLabel: 'Tên tài khoản:',
                     bind: {
-                        value: '{theacc.postId}'
+                        value: '{theacc.username}'
                     }
                 },
                 {
-                    fieldLabel: 'ID:',
-                    bind: {
-                        value: '{theacc.id}'
-                    }
+                    xtype: 'form',
+                    layout: 'hbox',
+                    items: [
+                        {
+                            xtype: 'textfield',
+                            fieldLabel: 'Mật khẩu:',
+                            inputType: 'password',
+                            flex: 1,
+                            bind: {
+                                value: '{theacc.password}'
+                            }
+                        },
+                        {
+                            xtype: 'button',
+                            style: '',
+                            iconCls: 'fa fa-eye',
+                            handler: 'showPass'
+                        }
+                    ]
+
                 },
                 {
-                    fieldLabel: 'Name:',
+                    fieldLabel: 'Họ và tên:',
                     bind: {
-                        value: '{theacc.name}'
+                        value: '{theacc.firstname} {theacc.lastname}'
                     }
                 },
                 {
@@ -152,34 +115,17 @@ Ext.define('WEB_BASE.Project.TestPage2.TTCN2.TTCN2_View', {
                     }
                 },
                 {
-                    xtype: 'form',
-                    layout: 'hbox',
-                    items: [
-                        {
-                            xtype: 'textfield',
-                            fieldLabel: 'Body:',
-                            inputType: 'password',
-                            bind: {
-                                value: '{theacc.body}'
-                            }
-                        },
-                        {
-                            xtype: 'button',
-                            iconCls: 'fa fa-eye',
-                            tooltip: 'Show password',
-                            handler: function (button) {
-                                var ShowPass = this.iconCls === 'fa fa-eye';
-                                this.setIconCls(ShowPass ? 'fa fa-eye-slash' : 'fa fa-eye');
-                                this.prev().getEl().query('input', false)[0].set({
-                                    'type': ShowPass ? 'text' : 'password'
-                                })
-                            }
-                        },
-                        {
-                            
-                        }
-                    ]
-                }
+                    fieldLabel: 'Địa chỉ:',
+                    bind: {
+                        value: '{theacc.address}'
+                    }
+                },
+                {
+                    fieldLabel: 'Số điện thoại:',
+                    bind: {
+                        value: '{theacc.phone}'
+                    }
+                },
             ]
         }
     ]

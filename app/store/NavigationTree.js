@@ -471,8 +471,50 @@ Ext.define('WEB_BASE.store.NavigationTree', {
                 viewType: 'Project_View',
                 routeId: 'project',
                 index: 0,
-                leaf: true
+                children: [
+                    {
+                        text: 'demo',
+                        viewType: 'Demo_View',
+                        routeId: 'demo',
+                        leaf: true,
+                    },
+                    {
+                        text: 'demo2',
+                        viewType: 'Demo2_View',
+                        routeId: 'demo2',
+                        hidden: true,
+                        leaf: true,
+                        xtype_edit: 'Demo2_View'
+                    }
+                ]
             },
+            {
+                text: 'Pivot',
+                iconCls: 'x-fa fa-user-circle',
+                viewType: 'Pivot_View',
+                routeId: 'pivot',
+                index: 0,
+                children: [
+                    {
+                        text: 'Plugin',
+                        iconCls: 'x-fa fa-user-circle',
+                        viewType: 'Plugin_View',
+                        routeId: 'plugin',
+                        index: 1,
+                        children: [
+                            {
+                                text: 'Exporter',
+                                iconCls: 'x-fa fa-user-circle',
+                                viewType: 'Exporter_View',
+                                routeId: 'exporter',
+                                leaf: true,
+                                index: 1,
+                            }
+                        ]
+                    }
+
+                ]
+            }
         ],
     },
 });

@@ -16,7 +16,7 @@ Ext.define('WEB_BASE.view.Form.Form_Login.Form_Login_View', {
             border: true,
             layout: 'auto',
             bodyPadding: 10,
-            width: 350,
+            width: 300,
             items: [
                 {
                     xtype: 'textfield',
@@ -51,7 +51,6 @@ Ext.define('WEB_BASE.view.Form.Form_Login.Form_Login_View', {
                         {
                             xtype: 'button',
                             style: '',
-                            pain: true,
                             iconCls: 'fa fa-eye',
                             handler: function (button) {
                                 var ShowPass = this.iconCls === 'fa fa-eye';

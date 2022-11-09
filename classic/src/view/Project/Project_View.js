@@ -1,4 +1,4 @@
-Ext.define('WEB_BASE.Project.Project_View', {
+Ext.define('WEB_BASE.view.Project.Project_View', {
     extend: 'Ext.tab.Panel',
     xtype: 'Project_View',
     id: 'Project_View',

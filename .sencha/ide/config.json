@@ -39,7 +39,7 @@
     */
 
     // List apps within the project root or included directories that were not built with Sencha Cmd.
-    // This is only required for apps that were not built with Sencha Cmd.  This lets the plugin know the correct root
+    // This is only  for apps that were not built with Sencha Cmd.  This lets the plugin know the correct root
     // namespace, sdk version, and toolkit (only applies to Ext 6 apps) for apps that do not follow the standard Sencha
     // structure.
     /*
