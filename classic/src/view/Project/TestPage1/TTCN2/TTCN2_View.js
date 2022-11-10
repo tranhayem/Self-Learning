@@ -97,10 +97,22 @@ Ext.define('WEB_BASE.Project.TestPage2.TTCN2.TTCN2_View', {
                             xtype: 'button',
                             style: '',
                             iconCls: 'fa fa-eye',
-                            handler: 'showPass'
+                            handler: function (button) {
+                                var ShowPass = this.iconCls === 'fa fa-eye';
+                                this.setIconCls(ShowPass ? 'fa fa-eye-slash' : 'fa fa-eye');
+                                this.prev().getEl().query('input', false)[0].set({
+                                    'type': ShowPass ? 'text' : 'password'
+                                })
+                            }
                         }
                     ]
 
+                },
+                {
+                    fieldLabel: 'Ngày sinh:',
+                    bind: {
+                        value: '{theacc.dob}'
+                    }
                 },
                 {
                     fieldLabel: 'Họ và tên:',

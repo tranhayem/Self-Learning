@@ -117,14 +117,6 @@ Ext.define('WEB_BASE.view.Project.Demo.Demo_View', {
         // { text: 'Email', dataIndex: 'email', flex: 1},
         // { text: 'Body', dataIndex: 'body', flex: 1},
     ],
-    renderTo: Ext.getBody(),
-    selModel: {
-        type: 'checkboxmodel',
-        mode: 'SINGLE', // chỉ được tích 1 hàng
-        listeners: {
-            select: 'onChecked'
-        }
-    },
     bind: {
         store: '{DemoApi_Store}',
         selection: '{theacc}'

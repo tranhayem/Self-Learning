@@ -15,4 +15,15 @@ Ext.define('WEB_BASE.Project.TestPage2.TTCN2.TTCN2_ViewModel', {
             type: 'DemoApi_Store'
         }
     },
+
+    data: {
+        username: '',
+        password: '',
+        firstname: '',
+        lastname: '',
+        dob: '',
+        email: '',
+        address: '',
+        phone: ''
+    },
 })

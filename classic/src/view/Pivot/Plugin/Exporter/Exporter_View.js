@@ -12,7 +12,6 @@ Ext.define('WEB_BASE.view.Pivot.Plugin.Exporter.Exporter_View', {
         type: 'Exporter_ViewModel'
     },
 
-    title: 'Exporter',
     plugins: {
         gridexporter: true
     },
@@ -101,7 +100,7 @@ Ext.define('WEB_BASE.view.Pivot.Plugin.Exporter.Exporter_View', {
                         {
                             text: 'HTML (visible items)',
                             cfg: {
-                                type: 'html',
+
                                 onlyExpandedNodes: true
                             }
                         }
@@ -115,6 +114,7 @@ Ext.define('WEB_BASE.view.Pivot.Plugin.Exporter.Exporter_View', {
             ftype:'grouping'
         }
     ],
+    columnLines: true,
     columns: [
         {
             text: 'Post Id',
@@ -123,9 +123,17 @@ Ext.define('WEB_BASE.view.Pivot.Plugin.Exporter.Exporter_View', {
             align: 'center',
             exportStyle: {
                 width: 80,
-                // alignment: {
-                //     horizontal: 'center'
-                // }
+                borders: [
+                    {
+                        color: 'black',
+                        position: 'Bottom',
+                        lineStyle: 'Continuous',
+                        weight: 1
+                    }
+                ],
+                alignment: {
+                    horizontal: 'Center'
+                }
             }
         },
         {
@@ -133,7 +141,15 @@ Ext.define('WEB_BASE.view.Pivot.Plugin.Exporter.Exporter_View', {
             dataIndex: 'name',
             flex: 1,
             exportStyle: {
-                width: 320,
+                width: 410,
+                borders: [
+                    {
+                        color: 'black',
+                        position: 'Bottom',
+                        lineStyle: 'Continuous',
+                        weight: 1
+                    }
+                ],
             },
         },
         {
@@ -141,11 +157,20 @@ Ext.define('WEB_BASE.view.Pivot.Plugin.Exporter.Exporter_View', {
             dataIndex: 'email',
             flex: 1,
             exportStyle: {
-                width: 280,
+                width: 200,
                 font: {
                     italic: true,
-                    color: 'blue'
+                    color: 'blue',
+                    underline: 'Single'
                 },
+                borders: [
+                    {
+                        color: 'black',
+                        position: 'Bottom',
+                        lineStyle: 'Continuous',
+                        weight: 1
+                    }
+                ],
             },
         },
         {
@@ -153,7 +178,15 @@ Ext.define('WEB_BASE.view.Pivot.Plugin.Exporter.Exporter_View', {
             dataIndex: 'body',
             flex: 1,
             exportStyle: {
-                width: 1200,
+                width: 1110,
+                borders: [
+                    {
+                        color: 'black',
+                        position: 'Bottom',
+                        lineStyle: 'Continuous',
+                        weight: 1
+                    }
+                ],
             },
         },
     ],

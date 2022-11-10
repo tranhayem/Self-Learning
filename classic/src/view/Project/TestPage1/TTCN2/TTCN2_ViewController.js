@@ -2,14 +2,6 @@ Ext.define('WEB_BASE.Project.TestPage2.TTCN2.TTCN2_ViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.TTCN2_ViewController',
 
-    showPass: function (btn) {
-        var ShowPass = btn.setIconCls === 'fa fa-eye';
-        btn.setIconCls(ShowPass ? 'fa fa-eye-slash' : 'fa fa-eye');
-        btn.prev().getEl().query('input', false)[0].set({
-            'type': ShowPass ? 'text' : 'password'
-        })
-    },
-
     postIdFilterKeyup: function() {
         var viewmodel = this.getViewModel();
         var filterField = this.lookupReference('postIdFilter');

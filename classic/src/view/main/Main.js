@@ -121,7 +121,7 @@ Ext.define('WEB_BASE.view.main.Main', {
                         ui: 'navigation',
                         store: 'NavigationTree',
                         expanderFirst: false,
-                        expanderOnly: false,
+                        expanderOnly: true,
                         // listeners: {
                         //     selectionchange: 'onNavigationTreeSelectionChange'
                         // }
