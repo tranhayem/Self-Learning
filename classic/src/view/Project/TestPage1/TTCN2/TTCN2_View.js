@@ -19,7 +19,7 @@ Ext.define('WEB_BASE.Project.TestPage2.TTCN2.TTCN2_View', {
                 {
                     text: 'STT',
                     xtype: 'rownumberer',
-                    width: '5%',
+                    width: 70,
                     align: 'center'
                 },
                 {

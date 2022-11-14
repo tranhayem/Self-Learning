@@ -32,7 +32,7 @@
     // Brighter when hovered
     $item-icon-over-color: #fff,
     $item-expander-over-color: #fff,
-    $item-text-over-color: mix(white, $panel-navigation-item-text-color, 50%),
+    $item-text-over-color: mix(red, $panel-navigation-item-text-color, 50%),
     $item-text-font-size: 14px,
 
     // Various sizes for the pieces:
@@ -58,7 +58,7 @@
 }
 .x-treelist-navigation .x-treelist-item-tool{
     padding: 0px;
-    width: 38px !important;
+    width: 40px !important;
 }
 .x-treelist-navigation .x-treelist-item-selected.x-treelist-item-tool:after {
     width: 2px !important;
@@ -99,6 +99,7 @@
     color: red !important;
 }
 .iconMenu {
+    padding: 0px 12px;
     color: #4095b3 !important
 }
 .btnError {
@@ -159,7 +160,7 @@
 .sencha-logo {
     // hoanglv - style
     // background-color: $base-color;
-    background-color: #222d32;
+    background-color: black;
     height: $height-titlebar;
 
     font-size: 14px;
@@ -168,6 +169,9 @@
 
     .main-logo {
         line-height: $height-titlebar;
+        height: 35px;
+        font-size: 20px;
+        font-weight: bold;
         img {
             margin-left: 7px;
             margin-right: 22px;
@@ -269,6 +273,7 @@ $grid-grouped-header-background-color : #f2e9e9;
 }
 
 .x-treelist-item-tool {
+    width: 40px;
     height: $panel-navigation-item-line-height;
     &.hot-icon:after,
     &.new-icon:after {
@@ -403,3 +408,206 @@ $grid-grouped-header-background-color : #f2e9e9;
     $background-color: transparent,
     $border-width: 0
 );
+
+
+.x-treelist-navigation {
+    background-color: white;
+    background-position: 44px 0%;
+    padding: 0 0 0 0;
+};
+
+.x-treelist-navigation .x-treelist-item-text {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 40px;
+};
+
+.x-btn-header-small {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    padding: 3px 3px 3px 3px;
+    border-width: 0;
+    border-style: solid;
+    background-color: black;
+};
+
+.x-panel-body-default {
+    background: aliceblue;
+    border-color: red;
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: helvetica, arial, verdana, sans-serif;
+    border-width: 1px;
+    border-style: solid;
+};
+
+.x-form-item-label-default {
+    color: black;
+    font: 400 14px/18px helvetica, arial, verdana, sans-serif;
+    min-height: 24px;
+    padding-top: 4px;
+    padding-right: 5px;
+};
+
+.x-column-header {
+    border-right: 1px solid red;
+    color: #666;
+    font: 500 14px/16px helvetica, arial, verdana, sans-serif;
+    outline: 0;
+    background-color: #fff;
+};
+
+.x-column-header-inner {
+    line-height: normal;
+    white-space: normal;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+};
+
+.x-grid-with-col-lines .x-grid-cell {
+    border-style: solid;
+    border-color: red;
+    border-width: 0 1px 0 0;
+}
+
+.x-grid-cell {
+    position: relative;
+};
+
+.x-grid-cell-row-numberer {
+    background-color: black;
+};
+
+.x-grid-cell-inner {
+    white-space: nowrap;
+    font-size: 14px;
+    position: relative;
+    text-overflow: ellipsis;
+    background-color: oldlace;
+};
+
+.x-grid-with-row-lines .x-grid-item:first-child {
+    border-top-color: red;
+};
+
+.x-grid-with-row-lines .x-grid-item {
+    border-style: solid;
+    border-width: 1px 0 0;
+    border-color: red;
+};
+
+.x-progress-default .x-progress-text-back {
+    color: black;
+    line-height: 20px;
+};
+
+.x-grid-with-row-lines .x-grid-item.x-grid-item-selected {
+    border-style: solid;
+    border-color: red;
+};
+
+.x-grid-with-row-lines .x-grid-item-selected + .x-grid-item {
+    border-top-style: solid;
+    border-top-color: red;
+};
+
+.x-grid-with-col-lines .x-grid-item-selected .x-grid-cell {
+    border-color: red;
+    border-style: solid;
+};
+
+.sencha-dash-dash-headerbar {
+    padding: 0 0px 0 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    border: none;
+    background-color: darkgreen;
+};
+
+.x-tab-bar-default {
+    background-color: black;
+};
+
+.x-btn-plain-toolbar-small {
+    border-color: darkgrey;
+};
+
+.x-toolbar-default .x-toolbar-separator-horizontal {
+    margin: 0 8px 0 0;
+    height: 14px;
+    border-style: solid;
+    border-width: 0 0 0 1px;
+    border-left-color: darkgrey;
+    border-right-color: #fff;
+};
+
+.x-btn-default-toolbar-small {
+    background-color: #53C4F7;
+    border-color: black;
+    color: back;
+};
+
+.x-btn-inner-default-toolbar-small {
+    font: 500 14px/16px helvetica, arial, verdana, sans-serif;
+    color: black;
+    padding: 0 5px;
+    max-width: 100%;
+};
+
+.x-btn-wrap-default-toolbar-small.x-btn-arrow-right:after {
+    width: 16px;
+    background-image: url(images/button/default-toolbar-small-arrow.png);
+    padding-right: 16px;
+    background-color: white;
+};
+
+.x-treelist-item-selected .x-treelist-item-text {
+    color: red !important;
+};
+
+.x-treelist-navigation .x-treelist-row {
+    padding-left: 10px;
+    background: white;
+    padding-right: 10px;
+};
+
+.x-treelist-navigation .x-treelist-item-selected > .x-treelist-row {
+    background-color: darkgrey;
+};
+
+.x-treelist-navigation .x-treelist-item-expander {
+    color: black;
+    font-size: 14px;
+    width: 24px;
+};
+
+.x-treelist-navigation .x-treelist-row-over > * > .x-treelist-item-expander {
+    color: red;
+};
+
+.sencha-logo .main-logo img {
+    margin-left: 5px;
+    margin-right: 12px;
+    top: 2px;
+    position: relative;
+};
+
+.x-treelist-navigation .x-treelist-item-icon, .x-treelist-navigation .x-treelist-item-tool {
+    color: #fff;
+    font-size: 18px;
+    width: 40px;
+};
+
+.x-treelist-item-text {
+    padding: 0px 0px 0px 20px;
+}

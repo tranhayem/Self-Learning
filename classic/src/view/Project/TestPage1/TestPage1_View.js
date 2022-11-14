@@ -13,6 +13,7 @@ Ext.define('WEB_BASE.view.Project.TestPage1.TestPage1_View', {
         split: true,
     },
     items: [
+        // phần bên trái
         {
             xtype: 'panel',
             title: 'Bên trái',
@@ -20,11 +21,13 @@ Ext.define('WEB_BASE.view.Project.TestPage1.TestPage1_View', {
             width: '70%',
             layout: 'vbox',
             items: [
+                // phần trên bên trái
                 {
                     xtype: 'panel',
                     layout: 'hbox',
                     width: '100%',
                     items: [
+                        // cột 1
                         {
                             xtype: '',
                             flex: 1,
@@ -86,6 +89,7 @@ Ext.define('WEB_BASE.view.Project.TestPage1.TestPage1_View', {
                                 }
                             ]
                         },
+                        // cột 2
                         {
                             xtype: '',
                             width: '50%',
@@ -150,11 +154,13 @@ Ext.define('WEB_BASE.view.Project.TestPage1.TestPage1_View', {
                         },
                     ]
                 },
+                // phần dưới bên trái
                 {
                     xtype: 'panel',
                     width: '100%',
                     layout: 'hbox',
                     items: [
+                        // grid
                         {
                             xtype: 'grid',
                             width: '70%',
@@ -164,7 +170,7 @@ Ext.define('WEB_BASE.view.Project.TestPage1.TestPage1_View', {
                                 {
                                     text: 'STT',
                                     xtype: 'rownumberer',
-                                    width: 50,
+                                    width: 70,
                                     align: 'center'
                                 },
                                 {
@@ -254,6 +260,7 @@ Ext.define('WEB_BASE.view.Project.TestPage1.TestPage1_View', {
                                 displayInfo: true,
                             }
                         },
+                        // ảnh
                         {
                             xtype: '',
                             width: '30%',
@@ -266,12 +273,13 @@ Ext.define('WEB_BASE.view.Project.TestPage1.TestPage1_View', {
                                     xtype: 'image',
                                     src: '/classic/resources/images/project/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg',
                                     height: 250,
+                                    width: 200,
                                     margin: 10
                                 },
                                 {
                                     xtype: 'button',
                                     text: 'Thay đổi ảnh',
-                                    margin: 10
+                                    margin: 5
                                 }
                             ]
                         }
@@ -280,6 +288,7 @@ Ext.define('WEB_BASE.view.Project.TestPage1.TestPage1_View', {
             ]
 
         },
+        // phần bên phải
         {
             xtype: 'tabpanel',
             title: 'Còn lại',

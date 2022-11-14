@@ -8,6 +8,7 @@ Ext.define('WEB_BASE.view.Pivot.Pivot_View', {
         type: 'Pivot_ViewModel'
     },
 
+    border: true,
     items: [
         {
             title: 'Plugin',

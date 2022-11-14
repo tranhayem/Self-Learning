@@ -33,7 +33,7 @@ Ext.define('WEB_BASE.view.main.Main', {
                     xtype: 'component',
                     reference: 'senchaLogo',
                     cls: 'sencha-logo',
-                    html: '<div class="main-logo"><img src="resources/images/icons/i8-factory.png">WEB-APP</div>',
+                    html: '<div class="main-logo"><img src="resources/images/icons/i8-factory.png">WEB-ABASCAS</div>',
                     width: 250
                 },
                 {

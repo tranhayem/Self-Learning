@@ -16,102 +16,105 @@ Ext.define('WEB_BASE.view.Pivot.Plugin.Exporter.Exporter_View', {
         gridexporter: true
     },
 
-    header: {
-        items: [
-            {
-                xtype: 'button',
-                text: 'Export',
+    tbar: [
+        {
+            xtype: 'component',
+            html: '<h1>Cái này chỉ là test thôi</h1>'
+        },
+        '->',
+        {
+            xtype: 'button',
+            text: 'Export',
+            defaults: {
+                handler: 'Export'
+            },
+            menu: {
                 defaults: {
-                    handler: 'Export'
+                    handler: 'exportTo'
                 },
-                menu: {
-                    defaults: {
-                        handler: 'exportTo'
+                items: [
+                    {
+                        text: 'Excel xlsx (pivot table definition)',
+                        handler: 'exportToPivotXlsx'
                     },
-                    items: [
-                        {
-                            text: 'Excel xlsx (pivot table definition)',
-                            handler: 'exportToPivotXlsx'
-                        },
-                        {
-                            text: 'Excel xlsx (all items)',
-                            cfg: {
-                                type: 'excel07',
-                                ext: 'xlsx'
-                            }
-                        },
-                        {
-                            text: 'Excel xlsx (visible items)',
-                            cfg: {
-                                type: 'excel07',
-                                onlyExpandedNodes: true,
-                                ext: 'xlsx'
-                            }
-                        },
-                        {
-                            text: 'Excel xml (all items)',
-                            cfg: {
-                                type: 'excel03',
-                                ext: 'xml'
-                            }
-                        },
-                        {
-                            text: 'Excel xml (visible items)',
-                            cfg: {
-                                type: 'excel03',
-                                onlyExpandedNodes: true,
-                                ext: 'xml'
-                            }
-                        },
-                        {
-                            text: 'CSV (all items)',
-                            cfg: {
-                                type: 'csv'
-                            }
-                        },
-                        {
-                            text: 'CSV (visible items)',
-                            cfg: {
-                                type: 'csv',
-                                onlyExpandedNodes: true
-                            }
-                        },
-                        {
-                            text: 'TSV (all items)',
-                            cfg: {
-                                type: 'tsv',
-                                ext: 'csv'
-                            }
-                        },
-                        {
-                            text: 'TSV (visible items)',
-                            cfg: {
-                                type: 'tsv',
-                                onlyExpandedNodes: true,
-                                ext: 'csv'
-                            }
-                        },
-                        {
-                            text: 'HTML (all items)',
-                            cfg: {
-                                type: 'html'
-                            }
-                        },
-                        {
-                            text: 'HTML (visible items)',
-                            cfg: {
-
-                                onlyExpandedNodes: true
-                            }
+                    {
+                        text: 'Excel xlsx (all items)',
+                        cfg: {
+                            type: 'excel07',
+                            ext: 'xlsx'
                         }
-                    ]
-                }
+                    },
+                    {
+                        text: 'Excel xlsx (visible items)',
+                        cfg: {
+                            type: 'excel07',
+                            onlyExpandedNodes: true,
+                            ext: 'xlsx'
+                        }
+                    },
+                    {
+                        text: 'Excel xml (all items)',
+                        cfg: {
+                            type: 'excel03',
+                            ext: 'xml'
+                        }
+                    },
+                    {
+                        text: 'Excel xml (visible items)',
+                        cfg: {
+                            type: 'excel03',
+                            onlyExpandedNodes: true,
+                            ext: 'xml'
+                        }
+                    },
+                    {
+                        text: 'CSV (all items)',
+                        cfg: {
+                            type: 'csv'
+                        }
+                    },
+                    {
+                        text: 'CSV (visible items)',
+                        cfg: {
+                            type: 'csv',
+                            onlyExpandedNodes: true
+                        }
+                    },
+                    {
+                        text: 'TSV (all items)',
+                        cfg: {
+                            type: 'tsv',
+                            ext: 'csv'
+                        }
+                    },
+                    {
+                        text: 'TSV (visible items)',
+                        cfg: {
+                            type: 'tsv',
+                            onlyExpandedNodes: true,
+                            ext: 'csv'
+                        }
+                    },
+                    {
+                        text: 'HTML (all items)',
+                        cfg: {
+                            type: 'html'
+                        }
+                    },
+                    {
+                        text: 'HTML (visible items)',
+                        cfg: {
+
+                            onlyExpandedNodes: true
+                        }
+                    }
+                ]
             }
-        ]
-    },
+        }
+    ],
     features: [
         {
-            ftype:'grouping'
+            ftype: 'grouping'
         }
     ],
     columnLines: true,
