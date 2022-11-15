@@ -105,5 +105,20 @@ Ext.define('WEB_BASE.view.Project.TestPage1.TestPage1_ViewController', {
             filters.remove(this.nameFilter);
             this.nameFilter = null;
         }
+    },
+
+    onChange: function() {
+        pop= Ext.create('Ext.window.Window',{
+            title: 'Test Popup',
+            items: [
+                {
+                    xtype: 'Testabc_View',
+                    width: 500,
+                    maxHeight: 300,
+                    scrollable: true                    
+                }
+            ]
+        });
+        pop.show()
     }
 })

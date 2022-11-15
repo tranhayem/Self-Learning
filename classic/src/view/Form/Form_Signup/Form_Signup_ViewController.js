@@ -9,7 +9,8 @@ Ext.define('WEB_BASE.view.Form.Form_Signup.Form_Signup_ViewController', {
             alert('Mật khẩu không khớp, hãy nhập lại mật khẩu')
         } else {
             Ext.create('Ext.window.Window', {
-                items: [
+            resizable: true,
+            items: [
                     {
                     xtype: 'Form_Login_View'
                     }

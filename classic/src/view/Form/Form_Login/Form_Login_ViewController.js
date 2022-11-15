@@ -18,6 +18,7 @@ Ext.define('WEB_BASE.view.Form.Form_Login.Form_Login_Controller', {
 
     signup: function() {
         Ext.create('Ext.window.Window', {
+            resizable: true,
             items: [
                 {
                     xtype: 'Form_Signup_View'

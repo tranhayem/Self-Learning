@@ -279,7 +279,8 @@ Ext.define('WEB_BASE.view.Project.TestPage1.TestPage1_View', {
                                 {
                                     xtype: 'button',
                                     text: 'Thay đổi ảnh',
-                                    margin: 5
+                                    margin: 5,
+                                    handler: 'onChange'
                                 }
                             ]
                         }
