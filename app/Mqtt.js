@@ -1,4 +1,4 @@
-Ext.define('WEB_BASE.Mqtt', {
+Ext.define('MyProject.Mqtt', {
 	extend: 'Ext.Base',
 
 	mixins: ['Ext.mixin.Mashup'],
@@ -54,8 +54,8 @@ Ext.define('WEB_BASE.Mqtt', {
 		me.onEventConnectOk();
 	},
 	onDisconnect: function () {
-		var CMD = WEB_BASE.util.State.get('CMD');
-		var sendChannel = WEB_BASE.util.State.get('sendChannel');
+		var CMD = MyProject.util.State.get('CMD');
+		var sendChannel = MyProject.util.State.get('sendChannel');
 		var termid = config.getTermid();
 		if (this.client) {
 
@@ -64,9 +64,9 @@ Ext.define('WEB_BASE.Mqtt', {
 				var message = new Paho.Message(Ext.JSON.encode(cmd));
 				message.destinationName = sendChannel;
 				message.qos = 0;
-				WEB_BASE.Mqtt.client.send(message);
-				WEB_BASE.util.State.set('CMD', '');
-				WEB_BASE.util.State.set('sendChannel', '');
+				MyProject.Mqtt.client.send(message);
+				MyProject.util.State.set('CMD', '');
+				MyProject.util.State.set('sendChannel', '');
 			}
 
 			console.log('disconnect on termid:' + termid);
