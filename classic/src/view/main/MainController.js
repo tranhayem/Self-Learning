@@ -40,7 +40,6 @@ Ext.define('WEB_BASE.view.main.MainController', {
             else
                 this.onRouteChange(hash);
         }
-
     },
     beforeRender: function () {
         // var tbname = this.lookup('tbname');
@@ -116,6 +115,7 @@ Ext.define('WEB_BASE.view.main.MainController', {
             west = refs.westContainer,
             center = refs.mainCardPanel,
             collapsing = !navigationList.getMicro(),
+            setWidth= this.getView('width'),
             new_width = collapsing ? 40 : 250;
 
         if (Ext.isIE9m || !Ext.os.is.Desktop) {

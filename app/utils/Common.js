@@ -1,10 +1,10 @@
-Ext.define('WEB_BASE.util.Common', {
+Ext.define('MyProject.util.Common', {
     singleton: true,
     alternateClassName: [
         'common'
     ],
     Check_Object_Permission: function () {
-        var data = WEB_BASE.util.State.get('session');
+        var data = MyProject.util.State.get('session');
         var list_function = data.list_function;
 
         for (var i = 0; i < list_function.length; i++) {
@@ -20,7 +20,7 @@ Ext.define('WEB_BASE.util.Common', {
         }
     },
     Check_Menu_Permission: function (me) {
-        var data = WEB_BASE.util.State.get('session');
+        var data = MyProject.util.State.get('session');
         var list_function = data.list_function;
 
         for (var i = 0; i < list_function.length; i++) {
@@ -33,7 +33,7 @@ Ext.define('WEB_BASE.util.Common', {
         }
     },
     Check_ActionColum_Permission: function (itemref) {
-        var data = WEB_BASE.util.State.get('session');
+        var data = MyProject.util.State.get('session');
         var list_function = data.list_function;
 
         for (var i = 0; i < list_function.length; i++) {
